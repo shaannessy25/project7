@@ -25,18 +25,22 @@ function draw () {
 
   print(plant.size);
 
-  growOrReset(122, 200, 100, 200);
+growOrReset(mouseX);
   
   drawPlant(width/2 - 25, 3 * height/4);
   drawPlant(width/2 + 25, 3 * height/4);
 
-  text(plantLabel(), 10, 20);
+  // text(plantLabel(), 10, 20);
 }
 
-function growOrReset(x,y,w,h){
-  fill(0);
-  rect(x, y, w, h);
+function growOrReset(){
+ if(mouseX >= 200){
+    plantGrow();
+} else if(mouseX < 200){
+  plantReset();
 
+
+}
 
 
 }
@@ -84,4 +88,13 @@ function drawSprout(x, y) {
 function drawBloom(x, y) {
   fill(bloomColor);
   ellipse(x, y - plant.size, plant.bloomSize, plant.bloomSize);
+}
+
+function drawPlant(x,y){
+  if(plant.size == 0){
+    drawSeed(x,y);
+  }else{
+    drawSprout(25, 25);
+    drawBloom(25, 25);
+  }
 }
