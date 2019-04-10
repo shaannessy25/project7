@@ -1,8 +1,4 @@
-var plant;
-var grassColor;
-var seedColor;
-var sproutColor;
-var bloomColor;
+var plant, grassColor, seedColor, sproutColor, bloomColor;
 
 function setup () {
   createCanvas(400, 400);
@@ -29,12 +25,20 @@ function draw () {
 
   print(plant.size);
 
-  // growOrReset();
+  growOrReset(122, 200, 100, 200);
   
-  // drawPlant(width/2 - 25, 3 * height/4);
-  // drawPlant(width/2 + 25, 3 * height/4);
+  drawPlant(width/2 - 25, 3 * height/4);
+  drawPlant(width/2 + 25, 3 * height/4);
 
-  // text(plantLabel(), 10, 20);
+  text(plantLabel(), 10, 20);
+}
+
+function growOrReset(x,y,w,h){
+  fill(0);
+  rect(x, y, w, h);
+
+
+
 }
 
 // ! Add your new functions below here !
