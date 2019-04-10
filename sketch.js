@@ -17,7 +17,7 @@ function setup () {
   sproutColor = color(20, 102, 32);
   bloomColor = color(149, 73, 216);
 
-  textSize(20);
+  textSize(25);
 }
 
 function draw () {
@@ -30,7 +30,9 @@ growOrReset(mouseX);
   drawPlant(width/2 - 25, 3 * height/4);
   drawPlant(width/2 + 25, 3 * height/4);
 
-  // text(plantLabel(), 10, 20);
+  text(plantLabel(), 10, 20);
+
+
 }
 
 function growOrReset(){
@@ -45,17 +47,27 @@ function growOrReset(){
 
 }
 
-// ! Add your new functions below here !
+function plantLabel(){
+  var x = 150
+  if(plant.size <= 1){ 
+     return 'seed';
+  } else if(plant.size > 1 && plant.size < x){
+    return 'growing';
+  } else if(plant.size >= x){
+      return 'blooming';
 
-// #2 Create the growOrReset function
+  }
+  
 
-// #3 Create the drawPlant function
+  
 
-// #4 Create the plantLabel function
 
-// ! Add your new functions above here !
 
-// ! Do not change the helper functions below !
+
+
+
+}
+
 function plantReset() {
   plant.size = 0;
   plant.bloomSize = 0;
