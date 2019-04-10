@@ -93,8 +93,9 @@ function drawBloom(x, y) {
 function drawPlant(x,y){
   if(plant.size == 0){
     drawSeed(x,y);
+    plant.size = plant.size + 1;
   }else{
-    drawSprout(25, 25);
-    drawBloom(25, 25);
+    drawSprout(x, y);
+    drawBloom(x, y);
   }
 }
